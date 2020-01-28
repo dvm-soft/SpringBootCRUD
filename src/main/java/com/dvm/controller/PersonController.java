@@ -19,7 +19,6 @@ public class PersonController {
         return ResponseEntity.ok().body(personService.getAllPerson());
     }
     @GetMapping("/person/{id}")
-
     public ResponseEntity<Person> getProductById(@PathVariable long id) {
         return ResponseEntity.ok().body(personService.getPersonById(id));
     }

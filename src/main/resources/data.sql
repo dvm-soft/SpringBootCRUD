@@ -5,7 +5,7 @@ create table PERSON
     FIRST_NAME  VARCHAR2(50) not null,
     MID_NAME    VARCHAR2(50),
     SECOND_NAME VARCHAR2(50) not null,
-    SEX         BOOLEAN,
+    GENDER         BOOLEAN,
     BIRTHDAY    DATE
 );
 
@@ -18,5 +18,5 @@ alter table PERSON
 
 */
 
-INSERT INTO PERSON (first_Name, mid_name, second_name, sex) VALUES ('Ivan', 'Ivanovich', 'Ivanov', 1)
+INSERT INTO PERSON (first_Name, mid_name, last_name, gender, birthday) VALUES ('Ivan', 'Ivanovich', 'Ivanov', 1, to_date('10.03.1972', 'DD.MM.YYYY'))
 

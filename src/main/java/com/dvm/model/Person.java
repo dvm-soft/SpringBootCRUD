@@ -13,18 +13,16 @@ public class Person {
     private Long id;
     private String firstName;
     private String midName;
-    private String secondName;
-    private Boolean sex;
+    private String lastName;
+    private Boolean gender;
     private LocalDate birthday;
 
-    public Person(String firstName, String midName, String secondName, Boolean sex, LocalDate birthday) {
+    public Person(String firstName, String midName, String lastName, Boolean gender, LocalDate birthday) {
         this.id = id;
-
-
         this.firstName = firstName;
         this.midName = midName;
-        this.secondName = secondName;
-        this.sex = sex;
+        this.lastName = lastName;
+        this.gender = gender;
         this.birthday = birthday;
     }
 
@@ -57,21 +55,22 @@ public class Person {
         this.midName = surName;
     }
 
-    @Column(name = "second_name", nullable = false, insertable = true, updatable = true)
-    public String getSecondName() {
-        return secondName;
+    @Column(name = "last_name", nullable = false, insertable = true, updatable = true)
+    public String getLastName() {
+        return lastName;
     }
 
-    public void setSecondName(String lastName) {
-        this.secondName = lastName;
+    public void setLastName(String lastName) {
+        this.lastName = lastName;
     }
 
-    public Boolean getSex() {
-        return sex;
+    @Column(name = "gender", nullable = true, insertable = true, updatable = true)
+    public Boolean getGender() {
+        return gender;
     }
 
-    public void setSex(Boolean sex) {
-        this.sex = sex;
+    public void setGender(Boolean sex) {
+        this.gender = sex;
     }
 
     @Column(name = "birthday", nullable = true, insertable = true, updatable = true)
@@ -89,8 +88,8 @@ public class Person {
                 "id=" + id +
                 ", firstName='" + firstName + '\'' +
                 ", surName='" + midName + '\'' +
-                ", lastName='" + secondName + '\'' +
-                ", sex=" + sex +
+                ", lastName='" + lastName + '\'' +
+                ", gender=" + gender +
                 ", birthday=" + birthday +
                 '}';
 

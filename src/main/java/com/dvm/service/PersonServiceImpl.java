@@ -27,12 +27,12 @@ public class PersonServiceImpl implements PersonService {
         Optional<Person> personDb = this.personRepository.findById(person.getId());
         if(personDb.isPresent()) {
             Person personUpdate = personDb.get();
-            personUpdate.setId(personUpdate.getId());
-            personUpdate.setFirstName(personUpdate.getFirstName());
-            personUpdate.setMidName(personUpdate.getMidName());
-            personUpdate.setSecondName(personUpdate.getSecondName());
-            personUpdate.setSex(personUpdate.getSex());
-            personUpdate.setBirthday(personUpdate.getBirthday());
+            personUpdate.setId(person.getId());
+            personUpdate.setFirstName(person.getFirstName());
+            personUpdate.setMidName(person.getMidName());
+            personUpdate.setLastName(person.getLastName());
+            personUpdate.setGender(person.getGender());
+            personUpdate.setBirthday(person.getBirthday());
             personRepository.save(personUpdate);
             return personUpdate;
         } else {
